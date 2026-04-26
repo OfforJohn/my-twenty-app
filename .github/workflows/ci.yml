@@ -39,7 +39,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Run integration tests
         run: yarn test
@@ -65,7 +65,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Deploy to Twenty Cloud
         run: yarn twenty deploy --api-key ${{ secrets.TWENTY_API_KEY }} --api-url ${{ secrets.TWENTY_API_URL }}
