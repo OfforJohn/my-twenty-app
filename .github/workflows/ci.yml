@@ -71,5 +71,8 @@ jobs:
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
+      - name: Add Twenty Cloud remote
+        run: yarn twenty remote add --as cloud --api-key ${{ secrets.TWENTY_API_KEY }} --api-url ${{ secrets.TWENTY_API_URL }}
+
       - name: Deploy to Twenty Cloud
-        run: yarn twenty deploy --api-key ${{ secrets.TWENTY_API_KEY }} --api-url ${{ secrets.TWENTY_API_URL }}
+        run: yarn twenty deploy --remote cloud
