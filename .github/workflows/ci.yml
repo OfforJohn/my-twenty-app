@@ -40,6 +40,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run integration tests
         run: yarn test
@@ -66,6 +68,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Deploy to Twenty Cloud
         run: yarn twenty deploy --api-key ${{ secrets.TWENTY_API_KEY }} --api-url ${{ secrets.TWENTY_API_URL }}
